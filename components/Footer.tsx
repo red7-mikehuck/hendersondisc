@@ -42,7 +42,7 @@ export default function Footer() {
             className="h-12 w-auto"
           />
           <p className="mt-4 max-w-sm text-sm leading-6 text-brand-grey">
-            Non-surgical spinal decompression for back, neck and sciatic pain in Henderson, Nevada.
+            The Swolensky Method: non-surgical care for back, neck, disc and sciatic pain in Henderson, Nevada.
           </p>
         </div>
 
@@ -92,6 +92,16 @@ export default function Footer() {
             ))}
           </ul>
           <ul className="mt-6 space-y-2 text-brand-grey">
+            <li>
+              <Link href="/swolensky-method" className="hover:text-brand-blue">
+                The Swolensky Method
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-brand-blue">
+                About us
+              </Link>
+            </li>
             <li>
               <Link href="/privacy" className="hover:text-brand-blue">
                 Privacy policy

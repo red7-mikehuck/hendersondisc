@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
       { source: "/thank-you-page", destination: "/thank-you", permanent: true },
       { source: "/thankyou", destination: "/thank-you", permanent: true },
       { source: "/privacy-policy", destination: "/privacy", permanent: true },
+      // Paths from drswolensky.com, in case that domain is pointed here later.
+      { source: "/about-us", destination: "/about", permanent: true },
+      { source: "/the-swolensky-method", destination: "/swolensky-method", permanent: true },
+      { source: "/spinal-decompression", destination: "/swolensky-method#spinal-decompression", permanent: true },
+      { source: "/laser-therapy", destination: "/swolensky-method#cold-laser", permanent: true },
+      { source: "/electroanalgesia", destination: "/swolensky-method#electroanalgesia", permanent: true },
+      { source: "/hyperwave-shockwave-therapy-henderson-nv", destination: "/swolensky-method#sound-therapy", permanent: true },
+      { source: "/hyperwave-shockwave-therapy", destination: "/swolensky-method#sound-therapy", permanent: true },
     ];
   },
   async headers() {

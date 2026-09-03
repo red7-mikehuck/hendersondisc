@@ -1,8 +1,10 @@
 import { SITE } from "@/lib/site";
+import { METHOD, TECHNOLOGIES } from "@/lib/method";
 
 export default function JsonLd() {
   const clinicId = `${SITE.url}/#clinic`;
-  const physicianId = `${SITE.url}/#dr-swolensky`;
+  const swolenskyId = `${SITE.url}/#dr-swolensky`;
+  const shepardId = `${SITE.url}/#dr-shepard`;
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -26,24 +28,48 @@ export default function JsonLd() {
         },
         // TODO(client): add openingHoursSpecification + geo once confirmed (CLIENT-TODO.md)
         medicalSpecialty: "Chiropractic",
-        availableService: {
-          "@type": "MedicalTherapy",
-          name: "Non-surgical spinal decompression (DRX-9000)",
-        },
+        availableService: [
+          {
+            "@type": "MedicalTherapy",
+            name: METHOD.name,
+            url: `${SITE.url}${METHOD.href}`,
+            description: METHOD.intro,
+          },
+          ...TECHNOLOGIES.map((t) => ({
+            "@type": "MedicalTherapy",
+            name: `${t.treatment} (${t.device})`,
+            url: `${SITE.url}${METHOD.href}#${t.slug}`,
+          })),
+        ],
         sameAs: [SITE.socials.facebook, SITE.socials.instagram, SITE.socials.youtube],
-        employee: { "@id": physicianId },
+        founder: { "@id": swolenskyId },
+        employee: [{ "@id": swolenskyId }, { "@id": shepardId }],
       },
       {
         "@type": "Physician",
-        "@id": physicianId,
+        "@id": swolenskyId,
         name: "Dr. Darrell Swolensky",
         honorificSuffix: "D.C.",
         jobTitle: "Chiropractor",
+        description: "Founder of Disc Centers of America – Henderson and creator of the Swolensky Method.",
         image: `${SITE.url}/images/dcoa-doctor.jpg`,
         worksFor: { "@id": clinicId },
         medicalSpecialty: "Chiropractic",
         telephone: SITE.phoneE164,
-        url: SITE.url,
+        url: `${SITE.url}/about`,
+      },
+      {
+        "@type": "Physician",
+        "@id": shepardId,
+        name: "Dr. Gregory Shepard",
+        honorificSuffix: "D.C.",
+        jobTitle: "Chiropractor",
+        alumniOf: "Palmer College of Chiropractic West",
+        image: `${SITE.url}/images/dcoa-dr-shepard.jpg`,
+        worksFor: { "@id": clinicId },
+        medicalSpecialty: "Chiropractic",
+        telephone: SITE.phoneE164,
+        url: `${SITE.url}/about`,
       },
     ],
   };

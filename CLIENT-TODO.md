@@ -28,9 +28,9 @@ will not deliver email in production until the first block is done.
 - [ ] **Geo coordinates** for the JSON-LD `MedicalClinic` (omitted rather than guessed).
 - [ ] **NAP** is `3 E Ocean Ave, Henderson, NV 89015 · (702) 565-7474 · info@drswolensky.com` everywhere. Confirm the
       email is the right public contact.
-- [ ] Confirm the practice is happy with the doctor line: "Care from Dr. Darrell Swolensky, D.C. — Disc Centers of
-      America, Henderson. Helping the valley avoid surgery and get out of pain." Dr. Shepard's photo was ingested
-      (`public/images/dcoa-dr-shepard.jpg`) but is not shown; say the word if both doctors should appear.
+- [ ] Confirm the practice is happy with the homepage doctor line: "Care from Dr. Darrell Swolensky, D.C. — Founder
+      of Disc Centers of America, Henderson and creator of the Swolensky Method. Helping the valley avoid surgery and
+      get out of pain." Both doctors now appear on the About Us page (see §7).
 
 ## 4. Testimonials and claims (compliance)
 
@@ -71,7 +71,32 @@ will not deliver email in production until the first block is done.
   `R7_Image → get` signed URLs as intended.
 - Image-generation spend this build: 5 generations ≈ $0.69.
 
-## 7. Launch checklist
+## 7. Swolensky Method + About Us revision (September 3, 2026)
+
+- [ ] **Device photos** — the four images under `public/images/tech-*.jpg` were pulled from the manufacturer
+      pages / links in the revision notes (the "Attachment.png" files never arrived). If the practice has its own
+      photos of its equipment, send them and I will swap them in `lib/method.ts` → `TECHNOLOGIES[].image`.
+      A studio photo of Dr. Swolensky standing with the NeuroMed Matrix also exists on neuromedinc.com; say the
+      word if you would rather use that for the electroanalgesia feature.
+- [ ] **Technology copy** — "What it does / How it works / Potential benefits" for each device was written from
+      the manufacturer pages and the current drswolensky.com content. Have Dr. Swolensky review, especially:
+      DRX9000 "FDA-cleared for true non-surgical spinal decompression" (Excite Medical's wording), the Matrix
+      "thousands of pulses per second vs. TENS" comparison, and the shockwave benefits.
+- [ ] **Hyperwave manufacturer** — shown as "HyperWave Medical" (hyperwavemedical.com). Confirm the exact device
+      model the clinic uses so the caption can name it.
+- [ ] **Six core components** — each card carries a one-line, non-clinical description I drafted; confirm or edit.
+- [ ] **Dr. Swolensky bio** — condensed from the existing About Us page. I dropped "achieves unparalleled patient
+      outcomes" (an outcome claim) and kept "trained thousands of doctors"; confirm the latter.
+- [ ] **Dr. Shepard bio** — facts are from the existing page; the "athlete's understanding of movement… restoring
+      function" philosophy sentence is drafted, not sourced. Confirm or replace.
+- [ ] **Practice history** — the existing site gives no founding year, so none is stated. Provide one if wanted.
+- [ ] **Navigation** — primary nav is now: The Swolensky Method · Conditions · Results · About Us · Contact. The
+      "How It Works" link was dropped (the section is still on the homepage) to keep the bar on one line at
+      900–1100px; the phone number hides below 1024px in favor of the CTA button.
+- [ ] **Homepage conditions** now list 12 items including Knee pain, Neuropathy and Spinal stenosis (4 × 3 grid on
+      desktop). The lead form's "main concern" dropdown was not changed; say if knee/neuropathy should be added.
+
+## 8. Launch checklist
 
 - [x] Vercel project `red7systems/hendersondisc` created; first deploy green at https://hendersondisc.vercel.app.
 - [ ] Connect the GitHub repo for automatic builds: Vercel → Project → Settings → Git → Connect

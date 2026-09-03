@@ -1,11 +1,12 @@
 # Henderson Disc — Disc Centers of America, Henderson
 
-Modern, single-page lead-generation site for **Disc Centers of America – Henderson** (Dr. Darrell Swolensky, D.C.).
+Modern lead-generation site for **Disc Centers of America – Henderson** (Dr. Darrell Swolensky, D.C.).
 It replaces the 2019 OptimizePress funnel at hendersondisc.com. The site has one job: capture free-consultation
-requests (form submissions and calls to **(702) 565-7474**).
+requests (form submissions and calls to **(702) 565-7474**). Content hierarchy: Dr. Swolensky → The Swolensky
+Method → six core components → advanced technologies → personalized treatment.
 
 - **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion · lucide-react · Resend
-- **Pages:** `/` (landing) · `/thank-you` · `/privacy` · `/api/lead` (POST)
+- **Pages:** `/` (landing) · `/swolensky-method` · `/about` · `/thank-you` · `/privacy` · `/api/lead` (POST)
 - **Brand:** White / Red / Grey / Blue — tokens live in [`tailwind.config.ts`](tailwind.config.ts)
 - **Imagery:** every image was ingested or generated through the Red7 MCP and committed under [`public/images`](public/images). Nothing is hot-linked.
 - **Open items for the client:** see [`CLIENT-TODO.md`](CLIENT-TODO.md)
@@ -86,6 +87,9 @@ npm start        # serve the build
 app/
   layout.tsx            fonts, metadata, header/footer, JSON-LD, GA
   page.tsx              landing page (sections below)
+  swolensky-method/     The Swolensky Method: hero, six core components, "one integrated method" band,
+                        four technology features (alternating image/copy), personalized care, final CTA
+  about/page.tsx        About Us: clinic intro, both doctors, the Henderson practice, Method intro + components
   thank-you/page.tsx    post-submit page
   privacy/page.tsx      privacy policy + disclaimers
   api/lead/route.ts     lead handler (Resend + optional webhook)
@@ -94,8 +98,10 @@ components/
   Header, MobileBar, Footer, LeadForm, DiscAnimation (signature visual),
   YouTubeFacade, Reveal (scroll fade), TelLink (click-to-call tracking), JsonLd, Analytics
   sections/             Hero, TrustBar, TryFirst, Conditions, HowItWorks,
-                        GettingStarted, VideoTestimonial, Results, Doctor, FinalCta
+                        GettingStarted, VideoTestimonial, Results, Doctor, PersonalizedCare, FinalCta
+  sections/method/      MethodHero, CoreComponents, IntegratedBand, Technology
 lib/site.ts             NAP, testimonials, conditions, photo manifest
+lib/method.ts           The Swolensky Method: six components, four technologies (copy + device images), doctor bios
 lib/gtag.ts             GA4 helper
 scripts/process-images.mjs  one-off sharp pipeline used to derive the committed web images
 public/images           committed imagery (see below)
@@ -114,6 +120,10 @@ Red7 client **DCOAH** (id 23), project **WEBSITE** (id 71), session 45.
 | `dcoa-clinic-exterior.jpg`, `dcoa-treatment-room.jpg` | Real clinic photos, assets `dcoa-clinic-exterior`, `dcoa-treatment-room` |
 | `dcoa-patient-01…06.jpg` | Real patient photos, assets `dcoa-patient-01…06` |
 | `video-poster.jpg` | YouTube poster for the Duane Clemons video, asset `dcoa-video-poster-clemons` |
+| `tech-drx9000.jpg` | Manufacturer product shot from excitemedical.com (DRX9000 lumbar page), trimmed and placed on a white 4:3 canvas |
+| `tech-erchonia-evrl.jpg` | Manufacturer product render from erchonia.com (EVRL page), trimmed, flattened to white |
+| `tech-neuromed-matrix.jpg` | Manufacturer studio photo from neuromedinc.com (link supplied by the client), resized |
+| `tech-hyperwave.jpg` | HyperWave press image (einnews, link supplied by the client), re-encoded |
 | `hero-active-couple.jpg` | AI-generated via `R7_Image` (id 79), lifestyle only — used for the hero below 1024px |
 | `hero-desktop.jpg`, `og-image.jpg` | Re-composition of the same scene via `R7_Image` (id 84, referencing 79) with the couple centered; right edge extended 15% (mirrored) locally so they sit between the copy and the form — used for the hero at ≥1024px |
 | `hero-grandkids.jpg` | AI-generated via `R7_Image` (id 80) — available, not currently placed |

@@ -48,6 +48,9 @@ export const CONDITIONS = [
   "Shooting hip pain",
   "Muscle spasms",
   "Post-surgery pain",
+  "Knee pain",
+  "Neuropathy",
+  "Spinal stenosis",
 ] as const;
 
 export type Testimonial = { name: string; city?: string; quote: string };

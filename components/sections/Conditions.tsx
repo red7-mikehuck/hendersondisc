@@ -15,7 +15,8 @@ export default function Conditions() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <ul className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {/* 12 conditions → 2 × 6 on tablets, 4 × 3 on desktop */}
+          <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {CONDITIONS.map((c) => (
               <li
                 key={c}

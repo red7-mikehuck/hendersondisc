@@ -8,9 +8,10 @@ import { SITE } from "@/lib/site";
 import TelLink from "./TelLink";
 
 const NAV = [
-  { href: "/#how-it-works", label: "How It Works" },
+  { href: "/swolensky-method", label: "The Swolensky Method" },
   { href: "/#conditions", label: "Conditions" },
   { href: "/#results", label: "Results" },
+  { href: "/about", label: "About Us" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -65,27 +66,27 @@ export default function Header() {
           />
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-7 nav:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-6 nav:flex xl:gap-7">
           {NAV.map((n) => (
-            <a
+            <Link
               key={n.href}
               href={n.href}
-              className="text-[15px] font-medium text-brand-grey transition-colors hover:text-brand-blue"
+              className="whitespace-nowrap text-[15px] font-medium text-brand-grey transition-colors hover:text-brand-blue"
             >
               {n.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden items-center gap-4 nav:flex">
           <TelLink
             location="header"
-            className="tabular inline-flex items-center gap-2 text-[15px] font-semibold text-brand-blue hover:text-brand-bluemid"
+            className="tabular hidden items-center gap-2 text-[15px] font-semibold text-brand-blue hover:text-brand-bluemid lg:inline-flex"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
             {SITE.phoneDisplay}
           </TelLink>
-          <Link href="/#consult" className="btn-primary !min-h-[44px] !px-5 text-[15px]">
+          <Link href="/#consult" className="btn-primary !min-h-[44px] !px-5 text-[15px] whitespace-nowrap">
             Free Consultation
           </Link>
         </div>
@@ -107,7 +108,7 @@ export default function Header() {
         <div id="mobile-menu" className="border-t border-brand-line bg-white nav:hidden">
           <nav aria-label="Mobile" className="wrap flex flex-col py-3">
             {NAV.map((n, i) => (
-              <a
+              <Link
                 key={n.href}
                 ref={i === 0 ? firstLink : undefined}
                 href={n.href}
@@ -115,7 +116,7 @@ export default function Header() {
                 className="border-b border-brand-line py-3.5 text-base font-medium text-brand-ink last:border-0"
               >
                 {n.label}
-              </a>
+              </Link>
             ))}
             <div className="mt-3 flex flex-col gap-3 pb-2">
               <TelLink location="mobile_menu" className="btn-secondary">

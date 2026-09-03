@@ -5,7 +5,12 @@ import Reveal from "@/components/Reveal";
 import TelLink from "@/components/TelLink";
 import { NAP_LINE, SITE } from "@/lib/site";
 
-export default function FinalCta() {
+type Props = {
+  /** GA4 location label for the form and call link on this page. */
+  location?: string;
+};
+
+export default function FinalCta({ location = "final_cta" }: Props) {
   return (
     <section id="contact" className="section scroll-mt-20 bg-brand-blue text-white" aria-labelledby="final-heading">
       <div className="wrap grid items-start gap-12 lg:grid-cols-[1fr_minmax(0,480px)] lg:gap-16">
@@ -17,7 +22,7 @@ export default function FinalCta() {
 
           <div className="mt-8 space-y-5 text-white/90">
             <TelLink
-              location="final_cta"
+              location={location}
               className="flex items-center gap-4 rounded-card border border-white/15 bg-white/5 p-4 transition hover:bg-white/10"
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-red text-white">
@@ -68,7 +73,7 @@ export default function FinalCta() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <LeadForm location="final_cta" heading="Claim your FREE consultation" />
+          <LeadForm location={location} heading="Claim your FREE consultation" />
         </Reveal>
       </div>
     </section>
