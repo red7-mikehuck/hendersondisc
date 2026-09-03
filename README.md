@@ -10,6 +10,16 @@ requests (form submissions and calls to **(702) 565-7474**).
 - **Imagery:** every image was ingested or generated through the Red7 MCP and committed under [`public/images`](public/images). Nothing is hot-linked.
 - **Open items for the client:** see [`CLIENT-TODO.md`](CLIENT-TODO.md)
 
+## Live environments
+
+| Environment | URL | Notes |
+| --- | --- | --- |
+| Staging / testing (Vercel production alias) | https://hendersondisc.vercel.app | Public. Lead API returns 503 until `RESEND_API_KEY` + `LEAD_RECIPIENT` are set in Vercel. |
+| Per-deployment URLs (`hendersondisc-*-red7systems.vercel.app`) | listed in the Vercel dashboard | Protected by Vercel Authentication; share the alias above with the client instead. |
+| Production | https://hendersondisc.com | Not yet pointed at Vercel — see *Deploy to Vercel* below. |
+
+Vercel project: team **red7systems**, project **hendersondisc** → https://vercel.com/red7systems/hendersondisc
+
 ---
 
 ## Local development

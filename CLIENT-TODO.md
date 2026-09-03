@@ -72,7 +72,11 @@ will not deliver email in production until the first block is done.
 
 ## 7. Launch checklist
 
-- [ ] Vercel project connected to `red7-mikehuck/hendersondisc`, env vars set, first deploy green.
+- [x] Vercel project `red7systems/hendersondisc` created; first deploy green at https://hendersondisc.vercel.app.
+- [ ] Connect the GitHub repo for automatic builds: Vercel → Project → Settings → Git → Connect
+      (`https://vercel.com/red7systems/hendersondisc/settings/git`). The CLI could not connect it because the Vercel
+      GitHub App is not installed on the `red7-mikehuck` account yet.
+- [ ] Env vars set in Vercel (see section 1).
 - [ ] Custom domain `hendersondisc.com` + `www` added in Vercel; DNS updated; SSL issued.
 - [ ] Resend domain verified; test lead delivered end to end.
 - [ ] Run Lighthouse on the production URL (mobile) and confirm ≥ 90 across the board.
