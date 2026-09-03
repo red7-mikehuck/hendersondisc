@@ -114,7 +114,8 @@ Red7 client **DCOAH** (id 23), project **WEBSITE** (id 71), session 45.
 | `dcoa-clinic-exterior.jpg`, `dcoa-treatment-room.jpg` | Real clinic photos, assets `dcoa-clinic-exterior`, `dcoa-treatment-room` |
 | `dcoa-patient-01…06.jpg` | Real patient photos, assets `dcoa-patient-01…06` |
 | `video-poster.jpg` | YouTube poster for the Duane Clemons video, asset `dcoa-video-poster-clemons` |
-| `hero-active-couple.jpg`, `og-image.jpg` | AI-generated via `R7_Image` (id 79), lifestyle only |
+| `hero-active-couple.jpg` | AI-generated via `R7_Image` (id 79), lifestyle only — used for the hero below 1024px |
+| `hero-desktop.jpg`, `og-image.jpg` | Re-composition of the same scene via `R7_Image` (id 84, referencing 79) with the couple centered; right edge extended 15% (mirrored) locally so they sit between the copy and the form — used for the hero at ≥1024px |
 | `hero-grandkids.jpg` | AI-generated via `R7_Image` (id 80) — available, not currently placed |
 | `decompression-diagram.jpg` | AI-generated illustration via `R7_Image` (id 81) |
 | `brand-texture.jpg` | AI-generated background via `R7_Image` (id 82) |

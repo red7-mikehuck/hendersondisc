@@ -50,9 +50,10 @@ will not deliver email in production until the first block is done.
 
 ## 5. Imagery
 
-- [ ] The **hero photo is AI-generated** (an active couple hiking; no real patients). If the practice has real
-      lifestyle or clinic photography it prefers, send it and I will swap it in (`public/images/hero-active-couple.jpg`
-      + `og-image.jpg`). A second generated option, `hero-grandkids.jpg`, is committed and unused.
+- [ ] The **hero photo is AI-generated** (an active couple hiking; no real patients). Desktop uses a centered
+      composition (`hero-desktop.jpg`), phones use the close-up (`hero-active-couple.jpg`). If the practice has real
+      lifestyle or clinic photography it prefers, send it and I will swap it in (plus `og-image.jpg`). A second
+      generated option, `hero-grandkids.jpg`, is committed and unused.
 - [ ] The logo is the real file from the current site (JPG → PNG, white margin trimmed). If a vector/transparent
       version exists, send it for crisper rendering.
 - [ ] Favicons/app icons were derived from an AI tile that reproduces the logo's spine mark on navy. Approve or
