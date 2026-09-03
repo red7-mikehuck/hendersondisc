@@ -116,6 +116,9 @@ will not deliver email in production until the first block is done.
       GitHub App is not installed on the `red7-mikehuck` account yet.
 - [ ] Env vars set in Vercel (see section 1).
 - [ ] Custom domain `hendersondisc.com` + `www` added in Vercel; DNS updated; SSL issued.
+- [ ] **At domain cutover, remove `NEXT_PUBLIC_SITE_URL` from Vercel and redeploy.** It is set to
+      `https://hendersondisc.vercel.app` for now so canonical tags, JSON-LD and social preview images resolve on the
+      staging link; once the apex domain is live the default (`https://hendersondisc.com`) must take over.
 - [ ] Resend domain verified; test lead delivered end to end.
 - [ ] Run Lighthouse on the production URL (mobile) and confirm ≥ 90 across the board.
 - [ ] Submit `https://hendersondisc.com/sitemap.xml` in Google Search Console; watch for 404s from old funnel URLs
