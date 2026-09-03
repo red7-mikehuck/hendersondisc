@@ -28,9 +28,9 @@ export default function Hero() {
 
       <div className="wrap relative grid gap-10 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,440px)] lg:items-center lg:gap-16 lg:py-24 xl:py-28">
         <div className="max-w-2xl text-white">
-          <p className="eyebrow !text-white/85">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-red" aria-hidden="true" />
-            Non-Surgical · Drug-Free · Henderson, NV
+          <p className="eyebrow !items-start !text-white/85">
+            <span className="mt-[0.45em] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-red" aria-hidden="true" />
+            <span>Non-Surgical · Drug-Free · Henderson, NV</span>
           </p>
           <h1
             id="hero-heading"

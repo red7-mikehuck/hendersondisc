@@ -11,7 +11,7 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="section scroll-mt-20 bg-white" aria-labelledby="how-heading">
       <div className="wrap grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
-        <Reveal className="relative">
+        <Reveal className="relative sm:mt-8">
           <div className="card overflow-hidden p-3">
             <Image
               src="/images/dcoa-drx9000.jpg"
@@ -25,7 +25,8 @@ export default function HowItWorks() {
               The DRX-9000 — the decompression system used at our Henderson clinic.
             </p>
           </div>
-          <div className="pointer-events-none absolute -bottom-6 -right-3 hidden w-40 rotate-2 overflow-hidden rounded-card border border-brand-line bg-white shadow-card sm:block lg:-right-8 lg:w-48">
+          {/* Illustration inset sits over the image's empty top-right corner, clear of the caption. */}
+          <div className="pointer-events-none absolute -right-2 -top-7 hidden w-32 rotate-3 overflow-hidden rounded-card border border-brand-line bg-white shadow-card sm:block lg:w-36 xl:-right-6 xl:w-44">
             <Image
               src="/images/decompression-diagram.jpg"
               alt="Illustration of a lumbar spine in profile with a healthy, rehydrated disc between the vertebrae."
