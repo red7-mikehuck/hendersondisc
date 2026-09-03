@@ -8,6 +8,7 @@ import MobileBar from "@/components/MobileBar";
 import Analytics from "@/components/Analytics";
 import JsonLd from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_KEYWORDS } from "@/lib/seo";
 
 const display = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -23,57 +24,51 @@ const sans = Inter({
   display: "swap",
 });
 
-const TITLE = "Non-Surgical Back, Neck & Sciatica Relief in Henderson, NV | Disc Centers of America";
-const DESCRIPTION =
-  "Relief from back, neck and sciatic pain without surgery or drugs. Non-surgical spinal decompression (DRX-9000) in Henderson, NV. Claim your free consultation or call (702) 565-7474.";
-
+// Social images come from app/**/opengraph-image.tsx (file-based metadata outranks this object).
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: TITLE,
+    default: DEFAULT_TITLE,
     template: `%s | ${SITE.name}`,
   },
-  description: DESCRIPTION,
+  description: DEFAULT_DESCRIPTION,
   applicationName: SITE.name,
-  keywords: [
-    "spinal decompression Henderson",
-    "non-surgical back pain relief Henderson NV",
-    "sciatica treatment Henderson",
-    "herniated disc treatment Henderson",
-    "DRX-9000 Henderson",
-    "Disc Centers of America Henderson",
-  ],
+  keywords: SITE_KEYWORDS,
+  authors: [{ name: SITE.doctor, url: `${SITE.url}/about` }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  category: "health",
   openGraph: {
     type: "website",
     url: SITE.url,
     siteName: SITE.name,
-    title: TITLE,
-    description: DESCRIPTION,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     locale: "en_US",
-    images: [
-      {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "An active couple hiking a sunny Nevada trail, pain-free.",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: TITLE,
-    description: DESCRIPTION,
-    images: ["/images/og-image.jpg"],
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
   },
   icons: {
     icon: [
+      { url: "/icons/icon-16.png", sizes: "16x16", type: "image/png" },
       { url: "/icons/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/icon-48.png", sizes: "48x48", type: "image/png" },
       { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  formatDetection: { telephone: true, email: true, address: true },
 };
 
 export const viewport: Viewport = {

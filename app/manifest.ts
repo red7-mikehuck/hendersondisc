@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: SITE.name,
     short_name: SITE.shortName,
-    description: "Non-surgical spinal decompression for back, neck and sciatic pain in Henderson, NV.",
+    description: "The Swolensky Method: non-surgical care for back, neck, disc and sciatic pain in Henderson, NV.",
     start_url: "/",
     display: "browser",
     background_color: "#FFFFFF",

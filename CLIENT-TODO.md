@@ -96,6 +96,18 @@ will not deliver email in production until the first block is done.
 - [ ] **Homepage conditions** now list 12 items including Knee pain, Neuropathy and Spinal stenosis (4 × 3 grid on
       desktop). The lead form's "main concern" dropdown was not changed; say if knee/neuropathy should be added.
 
+## 7b. SEO sweep (September 3, 2026) — nothing blocking, a few inputs would help
+
+- [ ] **Social handles** — if the practice has an X/Twitter account, give me the handle and I will add
+      `twitter:site`. Facebook/Instagram/YouTube are already in the JSON-LD `sameAs`.
+- [ ] **Preview cards** — every page now has its own 1200×630 preview image (logo, headline, photo). Check them at
+      `/opengraph-image`, `/swolensky-method/opengraph-image`, `/about/opengraph-image`. Say if the practice wants
+      different photos or wording on any of them.
+- [ ] **Google Business Profile** — once the domain is live, confirm the GBP website link points at the apex URL so
+      the `MedicalClinic` JSON-LD and the listing agree on name/address/phone.
+- [ ] **`/llms.txt`** is generated from the same content as the pages; it will pick up any copy changes
+      automatically. Nothing to do unless the practice wants it withheld.
+
 ## 8. Launch checklist
 
 - [x] Vercel project `red7systems/hendersondisc` created; first deploy green at https://hendersondisc.vercel.app.

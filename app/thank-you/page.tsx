@@ -3,12 +3,9 @@ import Link from "next/link";
 import { CheckCircle2, Phone } from "lucide-react";
 import TelLink from "@/components/TelLink";
 import { NAP_LINE, SITE } from "@/lib/site";
+import { PAGES, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "You're all set",
-  description: "Thanks for requesting a free consultation. Call (702) 565-7474 to lock in your time.",
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = pageMetadata(PAGES.thankYou);
 
 export default function ThankYouPage() {
   return (

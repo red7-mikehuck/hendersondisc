@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { NAP_LINE, SITE } from "@/lib/site";
+import { PAGES, pageMetadata } from "@/lib/seo";
+import PageJsonLd from "@/components/PageJsonLd";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: `How ${SITE.name} collects, uses and protects the information you share on this site.`,
-  alternates: { canonical: "/privacy" },
-};
+export const metadata: Metadata = pageMetadata(PAGES.privacy);
 
 const UPDATED = "September 2, 2026";
 
 export default function PrivacyPage() {
   return (
     <section className="section bg-white">
+      <PageJsonLd path="/privacy" name={PAGES.privacy.title} description={PAGES.privacy.description} crumbs={[{ name: "Privacy Policy", path: "/privacy" }]} />
       <div className="wrap">
         <article className="prose-custom mx-auto max-w-3xl">
           <p className="eyebrow">Legal</p>

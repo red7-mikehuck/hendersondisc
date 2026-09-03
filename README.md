@@ -7,6 +7,12 @@ Method → six core components → advanced technologies → personalized treatm
 
 - **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion · lucide-react · Resend
 - **Pages:** `/` (landing) · `/swolensky-method` · `/about` · `/thank-you` · `/privacy` · `/api/lead` (POST)
+- **SEO surface:** per-page title/description/canonical/keywords via [`lib/seo.ts`](lib/seo.ts) → `pageMetadata()`;
+  per-page social cards rendered at build time by `app/**/opengraph-image.tsx` (shared template in
+  [`lib/og.tsx`](lib/og.tsx), brand fonts in `assets/fonts`); site-wide JSON-LD (`WebSite`, `MedicalClinic`, two
+  `Physician`s, therapies) in `components/JsonLd.tsx` plus page-level `WebPage`/`AboutPage`/`MedicalWebPage` +
+  `BreadcrumbList` via `components/PageJsonLd.tsx`; `/llms.txt` for AI assistants (built from the same data as the
+  pages); `/sitemap.xml` with image entries; `/robots.txt`; favicon set 16→512 + Apple touch icon; web manifest.
 - **Brand:** White / Red / Grey / Blue — tokens live in [`tailwind.config.ts`](tailwind.config.ts)
 - **Imagery:** every image was ingested or generated through the Red7 MCP and committed under [`public/images`](public/images). Nothing is hot-linked.
 - **Open items for the client:** see [`CLIENT-TODO.md`](CLIENT-TODO.md)
@@ -90,6 +96,8 @@ app/
   swolensky-method/     The Swolensky Method: hero, six core components, "one integrated method" band,
                         four technology features (alternating image/copy), personalized care, final CTA
   about/page.tsx        About Us: clinic intro, both doctors, the Henderson practice, Method intro + components
+  opengraph-image.tsx   social card for the home page (about/ and swolensky-method/ have their own)
+  llms.txt/route.ts     plain-Markdown site summary for AI assistants
   thank-you/page.tsx    post-submit page
   privacy/page.tsx      privacy policy + disclaimers
   api/lead/route.ts     lead handler (Resend + optional webhook)

@@ -8,18 +8,10 @@ import PersonalizedCare from "@/components/sections/PersonalizedCare";
 import FinalCta from "@/components/sections/FinalCta";
 import { DOCTORS, METHOD } from "@/lib/method";
 import { NAP_LINE, SITE } from "@/lib/site";
+import { PAGES, pageMetadata } from "@/lib/seo";
+import PageJsonLd from "@/components/PageJsonLd";
 
-const TITLE = "About Us";
-const DESCRIPTION =
-  "Meet Dr. Darrell Swolensky and Dr. Gregory Shepard of Disc Centers of America – Henderson, and learn about the Swolensky Method for non-surgical back, disc and nerve pain relief.";
-
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  alternates: { canonical: "/about" },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: "/about" },
-  twitter: { title: TITLE, description: DESCRIPTION },
-};
+export const metadata: Metadata = pageMetadata(PAGES.about);
 
 function AboutHero() {
   return (
@@ -206,6 +198,13 @@ function MethodIntro() {
 export default function AboutPage() {
   return (
     <>
+      <PageJsonLd
+        path="/about"
+        type="AboutPage"
+        name={PAGES.about.title}
+        description={PAGES.about.description}
+        crumbs={[{ name: "About Us", path: "/about" }]}
+      />
       <AboutHero />
       <Doctors />
       <Practice />

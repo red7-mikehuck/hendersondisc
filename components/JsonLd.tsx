@@ -9,6 +9,15 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": `${SITE.url}/#website`,
+        url: SITE.url,
+        name: SITE.name,
+        alternateName: SITE.shortName,
+        inLanguage: "en-US",
+        publisher: { "@id": clinicId },
+      },
+      {
         "@type": "MedicalClinic",
         "@id": clinicId,
         name: SITE.name,
