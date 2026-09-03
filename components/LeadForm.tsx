@@ -90,9 +90,9 @@ export default function LeadForm({ heading = "Claim your FREE consultation", loc
       className={`card space-y-4 p-6 sm:p-8 ${className ?? ""}`}
     >
       <div>
-        <h3 id={`${id}-heading`} className="text-2xl font-bold sm:text-[26px]">
+        <h2 id={`${id}-heading`} className="text-2xl font-bold sm:text-[26px]">
           {heading}
-        </h3>
+        </h2>
         <p className="mt-1 text-sm text-brand-grey">Takes 30 seconds. We&apos;ll call to confirm you&apos;re a candidate.</p>
       </div>
 

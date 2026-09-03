@@ -26,19 +26,17 @@ export default function Results() {
 
         <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
-            <Reveal key={t.name} delay={(i % 3) * 0.08}>
-              <li className="card flex h-full flex-col p-6">
-                <figure className="flex h-full flex-col">
-                  <Stars />
-                  <blockquote className="mt-4 flex-1 text-[17px] leading-7 text-brand-ink">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="mt-5 text-sm font-semibold text-brand-blue">
-                    {t.name}
-                    {t.city && <span className="font-normal text-brand-grey"> · {t.city}</span>}
-                  </figcaption>
-                </figure>
-              </li>
+            <Reveal as="li" key={t.name} delay={(i % 3) * 0.08} className="card flex h-full flex-col p-6">
+              <figure className="flex h-full flex-col">
+                <Stars />
+                <blockquote className="mt-4 flex-1 text-[17px] leading-7 text-brand-ink">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 text-sm font-semibold text-brand-blue">
+                  {t.name}
+                  {t.city && <span className="font-normal text-brand-grey"> · {t.city}</span>}
+                </figcaption>
+              </figure>
             </Reveal>
           ))}
         </ul>

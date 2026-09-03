@@ -58,17 +58,15 @@ export default function GettingStarted() {
 
         <ol className="mt-12 grid gap-5 md:grid-cols-3">
           {steps.map((s, i) => (
-            <Reveal key={s.title} delay={i * 0.08}>
-              <li className="card flex h-full flex-col p-6">
-                <div className="flex items-center justify-between">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-bluesoft text-brand-bluemid">
-                    <s.Icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <span className="tabular font-display text-4xl font-extrabold text-brand-line">0{i + 1}</span>
-                </div>
-                <h3 className="mt-4 text-lg font-bold">{s.title}</h3>
-                <p className="mt-1.5 text-brand-grey">{s.body}</p>
-              </li>
+            <Reveal as="li" key={s.title} delay={i * 0.08} className="card flex h-full flex-col p-6">
+              <div className="flex items-center justify-between">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-bluesoft text-brand-bluemid">
+                  <s.Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="tabular font-display text-4xl font-extrabold text-brand-line">0{i + 1}</span>
+              </div>
+              <h3 className="mt-4 text-lg font-bold">{s.title}</h3>
+              <p className="mt-1.5 text-brand-grey">{s.body}</p>
             </Reveal>
           ))}
         </ol>
